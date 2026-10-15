@@ -1,0 +1,42 @@
+# ---------- 密钥与本地配置 ----------
+.env
+.env.*
+!.env.example
+
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# ---------- 运行时数据（记忆库 / 日志 / 人工确认队列）----------
+# 含私聊内容，严禁入库
+var/logs/*
+!var/logs/.gitkeep
+var/memory/*
+!var/memory/.gitkeep
+var/*.db
+var/*.sqlite
+var/*.sqlite3
+
+# ---------- 数据库与聊天记录 ----------
+*.db
+*.sqlite
+*.sqlite3
+*.log
+logs/
+
+# ---------- 屏幕采集产物（OCR 备选方案）----------
+*.png
+*.jpg
+*.jpeg
+!docs/**/*.png
+
+# ---------- macOS ----------
+.DS_Store

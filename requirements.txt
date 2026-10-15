@@ -1,0 +1,12 @@
+# 运行时依赖。
+# 说明：pyproject.toml 是依赖的唯一事实来源，本文件供不使用 package install 的场景。
+# 版本号留空 —— 待 Day 0 在本机（Python 3.11.15 / macOS 26.6.2 / arm64）实装验证后锁定。
+--index-url https://pypi.org/simple
+
+python-dotenv
+PyYAML
+jieba
+httpx
+pyobjc-framework-Cocoa
+pyobjc-framework-Quartz
+pyobjc-framework-Vision

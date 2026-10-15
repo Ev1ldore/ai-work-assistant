@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-work-assistant"
+version = "0.0.1"
+description = "个人微信自动回复 Agent（招聘笔试 MVP，仅支持 macOS 私聊文本）"
+readme = "README.md"
+requires-python = ">=3.11"
+
+# 依赖版本号一律留空：待 Day 0 在本机
+# （Python 3.11.15 / macOS 26.6.2 / Apple M5 arm64）实装验证后再锁定，
+# 不预先编造未经验证的版本约束。
+dependencies = [
+    "python-dotenv",
+    "PyYAML",
+    "jieba",
+    "httpx",
+    # macOS 辅助功能（AXUIElement）
+    "pyobjc-framework-Cocoa",
+    "pyobjc-framework-Quartz",
+    # OCR 备选方案的文本识别
+    "pyobjc-framework-Vision",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-timeout",
+    "ruff",
+]
+
+[project.scripts]
+wxagent = "wxagent.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"

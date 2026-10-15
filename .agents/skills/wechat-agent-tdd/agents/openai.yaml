@@ -1,0 +1,4 @@
+interface:
+  display_name: "微信 Agent TDD"
+  short_description: "按行为测试、红绿重构与真实验收门槛推进微信自动回复 MVP"
+  default_prompt: "使用 $wechat-agent-tdd 检查项目实际状态，选择下一项未完成测试，完成红绿重构并更新交接记录。"
